@@ -1,0 +1,26 @@
+@import '../layout/colors.scss';
+.custom-button {
+    border: 1px solid $charcoal;
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    margin: 5px 5px;
+}
+.flash-messages {
+    width: 100%;
+    color: $red;
+    text-align: center;
+    padding: 15px;
+    background-color: chartreuse;
+    font-size: 20px;
+    font-weight: bold;
+}
+.is-invalid {
+    border: 2px solid $red;
+}
+.alert-success {
+    font-size: 20px;
+    font-weight: 500;
+}

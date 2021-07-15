@@ -1,0 +1,13 @@
+@import '../../layout/colors.scss';
+.page-not-found {
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+}
+.error-title {
+    color: $red;
+    text-align: center;
+}
+.error-detail {
+    font-weight: bold;
+}

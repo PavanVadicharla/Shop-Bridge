@@ -1,0 +1,51 @@
+<div class="update-item-container">
+    <form [formGroup]="updateItem">
+        <div class="form-group">
+            <input 
+                type="hidden" 
+                class="form-control w-100" 
+                formControlName="id" 
+                name="id"
+                placeholder="Id">
+        </div>
+        <div class="form-group">
+            <input 
+                type="text" 
+                class="form-control w-100" 
+                formControlName="item_name"
+                name="item_name" [ngClass]="{ 'is-invalid': formField.item_name.errors && (formField.item_name.dirty || formField.item_name.touched) }"
+                placeholder="Item name">
+        </div>
+        <div class="form-group">
+            <input 
+                type="text" 
+                class="form-control w-100" 
+                formControlName="description" 
+                name="description" [ngClass]="{ 'is-invalid': formField.description.errors && (formField.description.dirty || formField.description.touched) }" 
+                placeholder="Description">
+        </div>
+        <div class="form-group">
+            <input 
+                type="text" 
+                class="form-control w-100" 
+                formControlName="price" 
+                name="price" [ngClass]="{ 'is-invalid': formField.price.errors && (formField.price.dirty || formField.price.touched) }"
+                placeholder="Price">
+        </div>    
+        <div class="form-group">
+            <input 
+                type="text" 
+                class="form-control w-100" 
+                formControlName="quantity" 
+                name="quantity" [ngClass]="{ 'is-invalid': formField.quantity.errors && (formField.quantity.dirty || formField.quantity.touched) }" 
+                placeholder="Quantity">
+        </div>        
+    </form>
+
+    <div class="update-item">
+    <button class="custom-button" [disabled]="updateBtnDisabled" (click)="update()">Update</button>
+    <button class="custom-button" (click)="resetForm()">Reset</button>
+    <button class="custom-button" (click)="goBack()">Go back</button>
+    </div>
+</div>
+

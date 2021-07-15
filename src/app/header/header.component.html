@@ -1,0 +1,7 @@
+<div class="header-container">
+    <a href="/">
+        <img class="site-logo" src="../../assets/logo.png" alt="ShopBridge">
+    </a>
+    <button *ngIf="loggedIn" class="custom-button" (click)="doLogout()">Logout</button>
+    <button *ngIf="!loggedIn" class="custom-button" (click)="doLogin()">Login</button>
+</div>

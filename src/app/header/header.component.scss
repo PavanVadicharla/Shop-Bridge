@@ -1,0 +1,20 @@
+@import '../../layout/common.scss';
+@import '../../layout/colors.scss';
+.header-container {
+    height: 75px;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    justify-content: space-between;
+    background-color: $light-gray;
+    border-bottom: 1px solid $dark-gray;
+}
+.site-logo{
+    height: 71px;
+    width: 200px;
+}
+.custom-button{
+    margin: 20px 40px;
+}

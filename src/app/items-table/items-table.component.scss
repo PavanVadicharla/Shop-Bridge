@@ -1,0 +1,59 @@
+@import '../../layout/common.scss';
+@import '../../layout/colors.scss';
+@import 'material-icons/iconfont/material-icons.css';
+
+.table-wrapper {
+  table {
+    text-align: center;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    margin: 20px 0 60px;
+    @media (max-width: 767px) {
+      width: 800px;
+      margin: 20px 0;
+    }
+    thead {
+      tr {
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+    th {
+      background: lightblue;
+      font-family: "bold";
+    }
+    td {
+      font-family: "light";
+      background: #f6fdff;
+    }
+    tr {
+      &:nth-child(2n) {
+        td {
+          background: #fbfbfb;
+        }
+      }
+    }
+    td,
+    th {
+      padding: 10px;
+      border-right: 1px solid #e2e2e2;
+      border-bottom: 1px solid #e2e2e2;
+      font-size: 14px;
+      color: black;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}
+.add-item {
+  display: flex;
+  justify-content: center;
+  @media (max-width: 767px) {
+    width: 100vh;
+  }
+}
+.material-icons {
+  cursor: pointer;
+}

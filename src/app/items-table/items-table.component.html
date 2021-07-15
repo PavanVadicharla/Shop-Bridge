@@ -1,0 +1,27 @@
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let item of headers">
+                    <div>{{item}}</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td *ngFor="let i of item | keyvalue:originalOrder">
+                    <div>{{i.value}}</div>
+                </td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        <span class="material-icons" (click)="removeItems(item)">delete</span>
+                        <span class="material-icons" (click)="updateItems(item)">edit</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="add-item">
+    <button type="button" class="custom-button" (click)="addItems()">Add item</button>
+</div>

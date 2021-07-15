@@ -1,0 +1,11 @@
+@import '../../layout/common.scss';
+@import '../../layout/colors.scss';
+
+.home-page-container {
+    margin: 10% 15%;
+}
+.item-action {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+}

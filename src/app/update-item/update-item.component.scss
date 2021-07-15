@@ -1,0 +1,52 @@
+@import '../../layout/common.scss';
+@import '../../layout/colors.scss';
+
+.form-group {
+    margin-bottom: 20px;
+    label {
+      margin-left: 20px;
+      font-size: 20px;
+      display: inline-block;
+      max-width: calc(100% - 40px);
+      margin-bottom: 5px;
+      font-weight: bold;
+      span {
+        font-weight: normal;
+        min-width: 280px;
+        display: inline-block;
+      }
+      &.no-input {
+        margin-bottom:0;
+      }
+    }
+  }
+  .form-control {
+    outline: none ! important;
+    box-shadow: none !important;
+    font-size: 18px;
+    @media(min-width: 1024px)  {
+      width: 94%;
+    }
+    @media(max-width: 1023px)  {
+      width: 90%;
+    }
+    @media(max-width: 767px)  {
+      width: 85%;
+    }
+    padding: 5px 20px;
+    border: 1px solid $dark-gray;
+    border-radius: 25px;
+    height: 40px;
+    background-color: $white;
+    color: $black;
+  }
+  .update-item {
+    display: flex;
+    justify-content: center;
+  }
+  .is-invalid {
+      border: 2px solid $red;
+  }
+  .update-item-container {
+    margin: 0 10%;
+  }

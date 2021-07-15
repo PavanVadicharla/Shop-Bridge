@@ -1,0 +1,18 @@
+@import '../../layout/common.scss';
+@import '../../layout/colors.scss';
+.footer {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    background-color: $light-gray;
+    border-top: 1px solid $dark-gray;
+}
+.site-logo{
+    float: right;
+    height: 80px;
+    width: 200px;
+    margin-top: -10px;
+    margin-right: 40px;
+}
