@@ -117,6 +117,7 @@ How the application will be used is explained below:
 
 **NOTE:**
 Every action is taken care with the help of local storage(like mock API response).
+After deleting all the items in the cart readding all the initial items back for demo purpose.
 
 <!-- ROADMAP -->
 ## Roadmap
