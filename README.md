@@ -162,6 +162,7 @@ Project Link: [https://pavanvadicharla.github.io/Shop-Bridge](https://pavanvadic
 
 <!-- Build&Run with ghpages -->
 ## Build&Run with ghpages
+Use Master branch to clone the project.
 Run the below commands in the terminal:
 1) ng build --prod --base-href "https://pavanvadicharla.github.io/Shop-Bridge/",
 2) npx angular-cli-ghpages --dir=dist/ShopBridge,
