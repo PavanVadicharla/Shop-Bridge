@@ -25,8 +25,8 @@ export class AddItemComponent implements OnInit {
       id: [''],
       item_name: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      price: ['', [Validators.required, Validators.pattern(/^[1-9]\d{0,10}(?:\.\d{1,4})?|\.\d{1,4}$/)]],
-      quantity: ['', [Validators.required, Validators.pattern(/^[1-9]\d{0,10}$/)]]
+      price: ['', [Validators.required, Validators.pattern(/^([1-9][0-9]{,2}(,[0-9]{3})*|[0-9]+)(\.[0-9]{1,9})?$/)]],
+      quantity: ['', [Validators.required, Validators.pattern(/^[1-9]\d{0,15}$/)]]
   });
   }
   ngOnInit(): void {
@@ -41,10 +41,14 @@ export class AddItemComponent implements OnInit {
     }
     return this.addItem.controls; 
   }
-
+  // method to reset the entered data within the form
   resetForm(){
     this.addItem.reset();
   }
+  /**
+   * Method which is used to instantiate the add item to storage service method,
+   * if the confirmation dialog is selected with "YES" else not
+   */
   add(){
     if(this.addItem.valid){
       let next_index = Number(localStorage.getItem("items_index"));
@@ -70,6 +74,7 @@ export class AddItemComponent implements OnInit {
     }
   }
 
+  // Method which redirects to the home page
   goBack() {
     this.router.navigate(['home']);
   }

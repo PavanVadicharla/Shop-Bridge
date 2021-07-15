@@ -3,9 +3,9 @@
 .footer {
     height: 100px;
     width: 100%;
-    position: fixed;
     left: 0px;
     bottom: 0;
+    position: fixed;
     background-color: $light-gray;
     border-top: 1px solid $dark-gray;
 }
@@ -14,5 +14,5 @@
     height: 80px;
     width: 200px;
     margin-top: -10px;
-    margin-right: 40px;
+    margin-right: 20px;
 }

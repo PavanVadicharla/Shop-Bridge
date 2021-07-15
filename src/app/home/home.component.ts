@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { KeyValue } from '@angular/common';
 import { FetchItemsService } from 'src/services/fetch-items-from-cart-service';
 
 @Component({

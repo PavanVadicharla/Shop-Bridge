@@ -2,7 +2,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddItemComponent } from './add-item/add-item.component';
-import { ItemsListComponent } from './items-list/items-list.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from '../services/routegaurd-service';
 import { UpdateItemComponent } from './update-item/update-item.component';
@@ -27,11 +26,6 @@ const routes: Routes = [
   {
     path: 'update-item',
     component: UpdateItemComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'items-list',
-    component: ItemsListComponent,
     canActivate: [AuthGuard]
   },
   {

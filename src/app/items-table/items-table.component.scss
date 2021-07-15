@@ -3,6 +3,8 @@
 @import 'material-icons/iconfont/material-icons.css';
 
 .table-wrapper {
+  overflow: scroll;
+  overflow-x: visible;
   table {
     text-align: center;
     width: 100%;
@@ -50,9 +52,7 @@
 .add-item {
   display: flex;
   justify-content: center;
-  @media (max-width: 767px) {
-    width: 100vh;
-  }
+  margin-bottom: 100px;
 }
 .material-icons {
   cursor: pointer;

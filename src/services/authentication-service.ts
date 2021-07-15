@@ -16,6 +16,12 @@ export class AuthService {
         private userService: UserService) {
     }
  
+    /**
+     * Method to do login the customer based on the below params
+     * @param username username of the admin user
+     * @param password password of the admin user
+     * @param stayLoggedIn selected option for the keep me logged in
+     */
     login(username: string, password: string, stayLoggedIn: string) {
         this.validCredentials = localStorage.getItem("login_credentials");
         this.validCredentials = JSON.parse(this.validCredentials);
@@ -44,7 +50,10 @@ export class AuthService {
             }
         }
     }
- 
+    /**
+     * Method to check if the user is logged in or not
+     * @returns true if logged in else fasle
+     */
     isUserLoggedIn() {
         if(localStorage.getItem("logged_in") == "true") {
             let todayDate = new Date();
@@ -60,14 +69,22 @@ export class AuthService {
             return false;
         }
     }
- 
+     /**
+     * Method to check if the user logged is admin or not
+     * @returns true if admin user else fasle
+     */
     isAdminUser() {
         if (this.userName=='admin') {
             return true; 
         }
         return false;
     }
-    
+    /**
+     * Method to perform the logout of the logged in admin user
+     * @param session_timeout if the session_timeout is passed as true 
+     * then the user will be logged out with session timed out info 
+     * message else Admin user performed logged out.
+     */
     logout(session_timeout: boolean){
         localStorage.setItem("logged_in", "false");
         this.events.publish("loggedOut");

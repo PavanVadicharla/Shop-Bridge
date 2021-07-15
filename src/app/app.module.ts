@@ -8,7 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { UpdateItemComponent } from './update-item/update-item.component';
-import { ItemsListComponent } from './items-list/items-list.component';
 import { AuthGuard } from 'src/services/routegaurd-service';
 import { AuthService } from 'src/services/authentication-service';
 import { HomeComponent } from './home/home.component';
@@ -32,7 +31,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     LoginComponent,
     AddItemComponent,
     UpdateItemComponent,
-    ItemsListComponent,
     HomeComponent,
     ItemsTableComponent,
     ConfirmationDialogComponent,

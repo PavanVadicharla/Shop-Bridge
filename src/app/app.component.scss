@@ -2,5 +2,8 @@
 @import '../layout/colors.scss';
 .main-container {
     position: relative;
-    top:75px
+    top:75px;
+    margin-bottom: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
 }

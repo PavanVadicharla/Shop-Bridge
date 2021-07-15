@@ -25,8 +25,8 @@ export class UpdateItemComponent implements OnInit {
       id: [''],
       item_name: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      price: ['', [Validators.required, Validators.pattern(/^[1-9]\d{0,10}(?:\.\d{1,4})?|\.\d{1,4}$/)]],
-      quantity: ['', [Validators.required, Validators.pattern(/^[1-9]\d{0,10}$/)]]
+      price: ['', [Validators.required, Validators.pattern(/^([1-9][0-9]{,2}(,[0-9]{3})*|[0-9]+)(\.[0-9]{1,9})?$/)]],
+      quantity: ['', [Validators.required, Validators.pattern(/^[1-9]\d{0,15}$/)]]
   });
   }
   ngOnInit(): void {
@@ -37,36 +37,34 @@ export class UpdateItemComponent implements OnInit {
     this.updateItem.controls['quantity'].setValue(this.route.snapshot.paramMap.get('quantity'));
   }
 
-    // convenience getter for easy access to form fields
-    get formField() { 
-      if (this.updateItem.valid) {
-        this.updateBtnDisabled = false;
-      } else {
-        this.updateBtnDisabled = true;
-      }
-      return this.updateItem.controls; 
+  // convenience getter for easy access to form fields
+  get formField() { 
+    if (this.updateItem.valid) {
+      this.updateBtnDisabled = false;
+    } else {
+      this.updateBtnDisabled = true;
     }
+    return this.updateItem.controls; 
+  }
 
+  // Method to reset the update item form
   resetForm(){
     this.updateItem.reset();
   }
+  
+  /**
+   * Method which instantiates the update item service method upon the confirmation dialog is selected with "YES"
+   */
   update(){
     if(this.updateItem.valid){
-      if(!this.userService.isExists(this.updateItem.value)) {
-        this.confirmDialogService.confirm('Please confirm..', 'Do you really want to update the item '+this.route.snapshot.paramMap.get('item_name')+' to '+this.updateItem.value.item_name+'?')
-        .then((confirmed) => {
-          if(confirmed) {
-            this.fetchItemsService.updateItemInLocalStorage(this.updateItem.value);
-            this.resetForm();
-          }
-        })
-        .catch(() => console.log('User dismissed the dialog'));
-      } else {
-        this.flashMessages.show('Item '+this.updateItem.value.item_name+' is already present in the cart!', {
-          cssClass: 'alert-warning',
-          timeout: 4000
-        });
-      }
+      this.confirmDialogService.confirm('Please confirm..', 'Do you really want to update the item '+this.route.snapshot.paramMap.get('item_name')+' to '+this.updateItem.value.item_name+'?')
+      .then((confirmed) => {
+        if(confirmed) {
+          this.fetchItemsService.updateItemInLocalStorage(this.updateItem.value);
+          this.resetForm();
+        }
+      })
+      .catch(() => console.log('User dismissed the dialog'));
     } else {
       this.flashMessages.show('Please enter all the fields!', {
         cssClass: 'alert-danger',
@@ -75,8 +73,8 @@ export class UpdateItemComponent implements OnInit {
     }
   }
 
+  // Method used to redirect the page to homepage
   goBack() {
     this.router.navigate(['home']);
   }
-
 }

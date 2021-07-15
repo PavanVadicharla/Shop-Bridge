@@ -11,9 +11,15 @@ export class AuthGuard implements CanActivate{
         ) {
 
     }
-        
-    canActivate(route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean|UrlTree {
+    
+    /**
+     * Method which is executed as a gaurd for all the routes specified and specifically to check 
+     * whether the admin user is logged in or not. If not redirects the admin to login page or else
+     * redirects to the accessed page 
+     * @param route route which is accessed
+     * @returns 
+     */
+    canActivate(route: ActivatedRouteSnapshot): boolean|UrlTree {
         if (!this.authService.isUserLoggedIn()) {
             this.flashMessages.show('Please login to access the cart!', {
                 cssClass: 'alert-danger',

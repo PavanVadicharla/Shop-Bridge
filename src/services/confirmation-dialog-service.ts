@@ -9,12 +9,13 @@ export class ConfirmationDialogService {
 
   constructor(private modalService: NgbModal) { }
 
+  //Method which is used to show the data in the confirmation dialog
   public confirm(
     title: string,
     message: string,
-    btnOkText: string = 'OK',
-    btnCancelText: string = 'Cancel',
-    dialogSize: 'sm'|'lg' = 'lg'): Promise<boolean> {
+    btnOkText: string = 'YES',
+    btnCancelText: string = 'NO',
+    dialogSize: 'sm'|'lg' = 'sm'): Promise<boolean> {
     const modalRef = this.modalService.open(ConfirmationDialogComponent, { size: dialogSize });
     modalRef.componentInstance.title = title;
     modalRef.componentInstance.message = message;

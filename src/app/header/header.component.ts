@@ -27,9 +27,12 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  // Method used to redirect the page to login page
   public doLogin() {
     this.router.navigate(['login']);
   }
+
+  // Method used to instantiate the authentication service logout method to perform logout
   public doLogout() {
     let sessionTimeOut = false;
     this.authService.logout(sessionTimeOut);

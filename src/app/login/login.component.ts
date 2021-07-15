@@ -14,7 +14,7 @@ export class LoginComponent {
 
     constructor(private formBuilder: FormBuilder, private authService: AuthService) {
         this.loginForm = this.formBuilder.group({
-            username: ['', [Validators.required], ],
+            username: ['', [Validators.required]],
             password: ['', [Validators.required, Validators.pattern(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/)]],
             stayLoggedIn: ['']
         });
@@ -28,6 +28,7 @@ export class LoginComponent {
         return this.loginForm.controls; 
     }
 
+    // Method which is used to instantiate the authentication service for login
     onSubmit() {
         this.authService.login(this.loginForm.value.username, this.loginForm.value.password, this.loginForm.value.stayLoggedIn);
     }
