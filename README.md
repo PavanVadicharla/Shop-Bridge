@@ -61,6 +61,11 @@ This project is designed for the admin to manage the items in the cart for their
 8) Page not found: Component which is shown when the admin tries to access the page which is not available,
 9) Confirmation dialog: Component used to show the confirmation dialogs when the admin wants to delete or update the item in the cart.
 
+Time taken to implement:
+1) Basic functionality -- 5hrs
+2) Layout -- 2hrs
+3) Other -- 1hr
+
 ### Built With
 * [Angular](https://getbootstrap.com)
 
