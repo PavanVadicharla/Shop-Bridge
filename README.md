@@ -102,6 +102,8 @@ How the application will be used is explained below:
 **Username:** admin
 **Password:** Admin@123
 ![image](https://user-images.githubusercontent.com/42332664/125817457-7a944c7f-6436-462a-9db3-9b3fe6531042.png)
+![re_goose_topbanner](https://user-images.githubusercontent.com/42332664/138638697-0c66f236-dfd4-4a26-85b8-4068d1603b3e.png)
+
 2) Enabling the Submit button only if the necessary validations are passed for the username and password.
 ![image](https://user-images.githubusercontent.com/42332664/125819129-76ac6f41-35fd-43ea-b234-52771e4d7223.png)
 3) Once the admin is logged in with keep me logged in then there will be no session timeout else the admin will be logged out automatically upon 30mins completion.
